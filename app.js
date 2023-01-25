@@ -12,7 +12,22 @@ let store = [{
   sku: '7744hs'
 }]
 
-let cart = []
+let cart = [
+  // {
+  //   name: 'Nutella',
+  //   img: 'https://images.unsplash.com/photo-1603701972178-96760b471be9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2864&q=80',
+  //   price: 22.93,
+  //   sku: '12j',
+  //   quantity: 1
+  // },
+  // {
+  //   name: '🤖',
+  //   img: 'https://images.unsplash.com/photo-1603701972178-96760b471be9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2864&q=80',
+  //   price: 22000.93,
+  //   sku: '12jj',
+  //   quantity: 1
+  // }
+]
 
 
 // SECTION DRAW FUNCTIONS
@@ -22,7 +37,7 @@ function drawStore(){
 
   let storeElem = document.getElementById('product-cards')
   let template = ''
-  
+
   for (let i = 0; i < store.length; i++) {
     const product = store[i];
     template += `
@@ -62,13 +77,28 @@ function drawStore(){
 }
 
 function drawCart(){
-  console.log('drawCart')
+  // console.log('drawCart')
+
+  let cartElem = document.getElementById('cart')
+  let template = ''
+
+  cart.forEach(item =>{
+    template += `<div>${item.name}</div>`
+  })
+
+
+
+  cartElem.innerHTML = template
+
 }
 
 //#endregion
 
 function addItemToCart(sku){
-  console.log('addItemToCart', sku)
+  // console.log('addItemToCart', sku)
+
+  drawCart()
+
 }
 
 
